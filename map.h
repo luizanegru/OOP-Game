@@ -4,8 +4,7 @@ using namespace std;
 #define item 3
 #define trap -1
 
-class Map
-{
+class Map {
 private:
     int **map;
     int rows;
@@ -22,33 +21,27 @@ public:
 
     void Show();
 
-    void SetPosition(int l, int c, int val)
-    {
+    void SetPosition(int l, int c, int val) {
         map[l][c] = val;
     }
 
-    int GetPosition(int l, int c)
-    {
+    int GetPosition(int l, int c) {
         return map[l][c];
     }
 
-    int GetCols()
-    {
+    int GetCols() {
         return cols;
     }
 
-    int GetRows()
-    {
+    int GetRows() {
         return rows;
     }
 
-    pair<int, int> GetTreasure()
-    {
+    pair<int, int> GetTreasure() {
         return Treasure;
     }
 
-    void SetTreasure(int pozx, int pozy)
-    {
+    void SetTreasure(int pozx, int pozy) {
         Treasure.first = pozx;
         Treasure.second = pozy;
     }
