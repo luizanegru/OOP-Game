@@ -9,12 +9,10 @@
 
 #include<vector>
 class ItemMojo;
-class Robot
-{
+class Robot {
 protected:
     pair<int, int> PositionR;
     char compatibilityR;
-
 
 public:
     Robot();
@@ -31,15 +29,12 @@ public:
         PositionR.first = moveRow;
         PositionR.second = moveColumn;
     }
-    char GetCompatibility() const
-    {
+    char GetCompatibility() const {
         return compatibilityR;
     }
 };
 
-class Mojo : public Robot
-{
-private:
+class Mojo : public Robot {
 
 public:
     Mojo();
@@ -47,16 +42,14 @@ public:
     void Move(Map &M, pair<int, int>PositionR);
 };
 
-class Jojo : public Robot
-{
+class Jojo : public Robot {
 public:
     Jojo();
     Jojo(int x, int y, char comp);
     void Move(Map &M, pair<int, int>PositionR);
 };
 
-class Cojo : public Robot
-{
+class Cojo : public Robot {
 public:
     Cojo();
     Cojo(int x, int y, char comp);
