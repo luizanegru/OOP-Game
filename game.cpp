@@ -3,14 +3,12 @@
 //
 #include"game.h"
 
-Game::~Game()
-{
+Game::~Game() {
     items.clear();
     robots.clear();
 }
 
 void Game::Initializare(Game &game, Map &map) {
-
     //int rows, cols;
     int number;
     int pozx, pozy;
@@ -33,15 +31,13 @@ void Game::Initializare(Game &game, Map &map) {
     cout<<"Numarul de capcane este:"<<endl;
     cin>>game.numberTraps;
 
-    for(number = 0; number < game.numberTraps; number++)
-    {
+    for(number = 0; number < game.numberTraps; number++) {
         cout<<"Capcana "<<number<<" este pozitionata pe linia: ";
         cin>>pozx;
         cout<<" si coloana ";
         cin>>pozy;
         map.SetPosition(pozx, pozy, trap);
         cout<<endl;
-
     }
 
     robots.push_back(new Mojo(0, 0, 3));
@@ -51,12 +47,9 @@ void Game::Initializare(Game &game, Map &map) {
     ItemMojo itm1(8, 8 , 3, map);
     ItemJojo itm2(7, 7, 2, map);
     ItemCojo itm3(10, 7, 4, map);
-
-
 }
 
 void Game::GamePlay(Game game, Map &map) {
-
     int numberrobot;
     cout<<"Alege robotul";
     cin>>numberrobot;
@@ -67,8 +60,7 @@ void Game::GamePlay(Game game, Map &map) {
     map.Show();
     pair<int, int>PozR;
 
-    for(int i = 0; i < game.numberRounds; i++)
-    {
+    for(int i = 0; i < game.numberRounds; i++) {
         robots[numberrobot]->Move(map, PozR);
         PozR.first = robots[numberrobot]->getPositionRobot().first;
         PozR.second = robots[numberrobot]->getPositionRobot().second;
@@ -84,8 +76,7 @@ void Game::GamePlay(Game game, Map &map) {
     cout<<"Introduti numarul de runde";
     cin>>numberRounds2;
 
-    for(int i = 0; i < numberRounds2; i++)
-    {
+    for(int i = 0; i < numberRounds2; i++) {
         robots[numberrobot]->Move(map, PozR);
         PozR.first = robots[numberrobot]->getPositionRobot().first;
         PozR.second = robots[numberrobot]->getPositionRobot().second;
@@ -95,5 +86,4 @@ void Game::GamePlay(Game game, Map &map) {
         map.Show();
         cout<<endl;
     }
-
 }
