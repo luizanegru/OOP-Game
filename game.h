@@ -6,7 +6,6 @@
 #define UNTITLED4_GAME_H
 #include"trap.h"
 
-
 #define c 7
 
 class Game{
@@ -23,11 +22,9 @@ Game(){
     numberRounds = 0;
     numberTraps = 0;
 }
-Game(int x, int z)
-    {
+Game(int x, int z) {
         numberRounds = x;
         numberTraps = z;
-
     }
 
 void Initializare(Game &game, Map &map);
